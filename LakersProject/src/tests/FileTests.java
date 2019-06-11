@@ -1,4 +1,4 @@
-//import static org.junit.*;
+import junit.*;
 package test;
 import guimain.ImportExportHelper;
 
