@@ -9,17 +9,18 @@ import javax.swing.JTextField;
 
 /**
  * Main controller class for the application, sets up the GUI and its related components.
- * @author Lakers Project Team
+ * @author Garhgaj Singh
  */
 
-//This class is not used but was helpful becuase we were trying
-//to create a settings panel.This was helpful becuase its good
+
+//Trying to create a settings panel.This was helpful becuase its good
 //for practice in order to create frames, jpanels, jlabels.
 public class Settings extends JFrame {
 
 String userWord = "";
 JTextField userInput;
 
+   //initializing
 public Settings() {
 JFrame frame = new JFrame();
 JPanel panel = new JPanel();
