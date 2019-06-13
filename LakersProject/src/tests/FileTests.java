@@ -2,6 +2,11 @@ import junit.*;
 package test;
 import guimain.ImportExportHelper;
 
+/**
+ * Testing JUnit for import and export.
+ * @author Grant S.
+ */
+
 class FileTests {
    ImportExportHelper testData;
    
