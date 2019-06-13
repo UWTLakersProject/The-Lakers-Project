@@ -13,7 +13,7 @@ import data.Project;
 import guicomponents.CreateProjectPanel;
 /**
  * Main controller class for the application, sets up the GUI and its related components.
- * @author Lakers Project Team
+ * @author Daniel Loony, Grant S., Garhgaj S., Thias D.
  */
 public class DIYProjectMain implements Serializable{
 	
