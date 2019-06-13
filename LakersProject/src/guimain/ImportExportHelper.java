@@ -17,7 +17,7 @@ import data.Project;
 
 /**
  * This class implements our import and export function 
- * @author Lakers Project Team
+ * @author Daniel Loony, Grant S., Thias D., Garhgaj Singh
  */
 
 //Setting up variables
