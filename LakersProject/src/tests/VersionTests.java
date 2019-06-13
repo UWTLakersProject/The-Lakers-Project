@@ -7,7 +7,10 @@ import org.junit.jupiter.api.Test;
 
 import guimain.DIYProjectMain;
 import guimain.Version;
-
+/**
+ * This class implements our jUnit test for our version class
+ * @author Daniel Loony, Garhgaj S
+ */
 
 //Sets and obtains the version automatically based off of the serialized version of the class
 //This class is helpful setting up our JUnit tests
