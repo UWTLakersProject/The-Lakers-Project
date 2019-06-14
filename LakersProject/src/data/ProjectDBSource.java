@@ -1,3 +1,3 @@
-public class PROJECT{
+create table PROJECT(
 
-}
+)
