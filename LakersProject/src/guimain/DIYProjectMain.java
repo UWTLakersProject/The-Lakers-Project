@@ -40,7 +40,7 @@ public class DIYProjectMain implements Serializable{
     private final JPanel myTitlePanel;
 	private final JPanel myLeftPanel;
 	private final JPanel myFooterPanel = new JPanel();
-	private final JPanel myInfoPanel;
+	private CenterPanelWithProjects myInfoPanel;
 	private CreateProjectPanel myCreateProjectPanel;
 	
 /**** Menu Bar *****/
@@ -75,7 +75,7 @@ public class DIYProjectMain implements Serializable{
 		///Construct Panel
 		myLeftPanel = new JPanel();
 		myMainPanel = new JPanel();
-		myInfoPanel = new JPanel();
+		myInfoPanel = new CenterPanelWithProjects(myDatabase);
 		myTitlePanel = new JPanel();
 		myMenuBar = new JMenuBar();
 		//Setup main panel
@@ -84,7 +84,7 @@ public class DIYProjectMain implements Serializable{
 		myMainPanel.add(myFooterPanel, BorderLayout.SOUTH);
 		
 		//Constructor Methods
-		createInfoPanel();
+//		createInfoPanel();
 		createLeftPanel();
 		createTitlePanel();
 		createMenu();
@@ -107,15 +107,16 @@ public class DIYProjectMain implements Serializable{
 		projVersion.setVersion();
 	}
 	
-	//Creating the infopanel.
-	public void createInfoPanel() {
-		FlowLayout layout = new FlowLayout();
-		layout.setHgap(10);
-		layout.setVgap(10);
-		myInfoPanel.setLayout(layout);
-		myInfoPanel.setBackground(Color.LIGHT_GRAY);
-		myInfoPanel.add(new JButton("Close Window"));
-	}
+//	//Creating the infopanel.
+//	public void createInfoPanel() {
+//		FlowLayout layout = new FlowLayout();
+//		layout.setHgap(10);
+//		layout.setVgap(10);
+//		myInfoPanel.setLayout(layout);
+//		myInfoPanel.setBackground(Color.LIGHT_GRAY);
+//		myInfoPanel.add(new JButton("Close Window"));
+//	}
+	
 	//Creating buttons on panels so user can easily click on them.
 	public void createLeftPanel() {
 		JButton btnCreateProject = new JButton("Create Project");	
@@ -155,7 +156,7 @@ public class DIYProjectMain implements Serializable{
 	                if(e.getSource() == btnCreateProject) {
 	                	myMainPanel.remove(myCreateProjectPanel);
 	                	myCreateProjectPanel = new CreateProjectPanel(myDatabase);
-	                	myMainPanel.remove(myInfoPanel);
+	                	myMainPanel.remove(myInfoPanel.myJList);
 	                	myMainPanel.add(myCreateProjectPanel, BorderLayout.CENTER);
 	                	myMainPanel.revalidate();
 	                	myMainPanel.repaint();
@@ -170,7 +171,8 @@ public class DIYProjectMain implements Serializable{
 		btnProjectInfo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				myMainPanel.remove(myCreateProjectPanel);
-				myMainPanel.add(myInfoPanel, BorderLayout.CENTER);
+				myInfoPanel.updateProjects(myDatabase.getAllProjects());
+				myMainPanel.add(myInfoPanel.myJList, BorderLayout.CENTER);
 				myMainPanel.revalidate();
 				myMainPanel.repaint();
 			}
