@@ -224,5 +224,12 @@ public class ImportExportHelper {
 	public void databaseView() {
 	}
 	
+	public String getUserName() {
+		return myUserName;
+	}
+	
+	public String getEmail() {
+		return myEmail;
+	}
 	
 }
