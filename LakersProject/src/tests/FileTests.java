@@ -1,6 +1,12 @@
+package tests;
+
 import junit.*;
-package test;
+
+import static org.junit.Assert.assertEquals;
+
+import data.Database;
 import guimain.ImportExportHelper;
+
 
 /**
  * Testing JUnit for import and export.
@@ -8,10 +14,11 @@ import guimain.ImportExportHelper;
  */
 
 class FileTests {
-   ImportExportHelper testData;
+   public ImportExportHelper testData;
+   public Database testDatabase;
    
    final void setup() {
-      testData = new ImportExportHelper();
+      testData = new ImportExportHelper(testDatabase);
    }
    
    final void testUSerName(){
